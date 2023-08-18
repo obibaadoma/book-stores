@@ -23,5 +23,6 @@
   "ignorePatterns": [
     "dist/",
     "build/"
-  ]
+  ],
+  "requireConfigFile": "false"
 }
