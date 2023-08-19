@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchBooks } from './components/redux/books/books';
-import BookList from './components/BookList';
+import Books from './components/Books';
 import Navigation from './components/NavBar';
 import CategoryPage from './components/Category';
 
@@ -13,7 +13,7 @@ const App = () => {
     <div>
       <Navigation />
       <Routes>
-        <Route path="/" element={<BookList />} />
+        <Route path="/" element={<Books />} />
         <Route path="/category" element={<CategoryPage />} />
       </Routes>
     </div>

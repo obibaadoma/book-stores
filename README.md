@@ -13,12 +13,10 @@
     - [Usage](#usage)
     - [Run tests](#run-tests)
     - [Deployment](#deployment)
-  - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
+  - [� License ](#-license-)
 
 
 
@@ -41,7 +39,6 @@ Book-Stores The JavaScript project is a bookstore app.
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
 
 - **[Book Stores]**
 - **[Quote]**
@@ -106,18 +103,11 @@ You can deploy this project using:
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
-
 👤 **Author**
 
 - GitHub: (https://github.com/obibaadoma)
 - Twitter: (https://twitter.com/obibaadoma)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/derek-akrasi-konadu)
-
-
-
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/derek-akrasi-konadu-187453151/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
@@ -150,10 +140,6 @@ If you like this project...
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
 
 I would like to thank...
 
