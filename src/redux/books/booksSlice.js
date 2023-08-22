@@ -3,7 +3,24 @@ const ADD_BOOKS = 'bookstore/books/ADD_BOOKS';
 const REMOVE_BOOKS = 'bookstore/books/REMOVE_BOOKS';
 
 // initial state
-const initialState = { books: [] };
+const initialState = { books: [{
+  "item_id": "item1",
+  "title": "The Great Gatsby",
+  "author": "John Smith",
+  "category": "Fiction"
+},
+{
+  "item_id": "item2",
+  "title": "Anna Karenina",
+  "author": "Leo Tolstoy",
+  "category": "Fiction"
+},
+{
+  "item_id": "item3",
+  "title": "The Selfish Gene",
+  "author": "Richard Dawkins",
+  "category": "Nonfiction"
+}] };
 
 //  the action type to define the action creator
 

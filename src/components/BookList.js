@@ -6,20 +6,20 @@ import BookForm from './BookForm';
 const BookList = () => {
   const books = [
     {
-      title: 'things fall apart',
-      author: 'Chinua Achebe',
+      title: 'the gods are not to blame',
+      author: 'Ola Rotimi',
       completed: true,
       id: uuid4(),
     },
     {
-      title: 'things fall apart',
-      author: 'Chinua Achebe',
+      title: 'The marriage of anansewa',
+      author: 'ama ataa aidoo',
       completed: true,
       id: uuid4(),
     },
     {
-      title: 'things fall apart',
-      author: 'Chinua Achebe',
+      title: 'ancestral sacrifice',
+      author: 'akosombo nyantakyi',
       completed: true,
       id: uuid4(),
     },
