@@ -2,7 +2,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Math-app\] ](#-math-app-)
+- [📖 \[React-Book-store\] ](#-react-book-store-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -13,14 +13,11 @@
     - [Usage](#usage)
     - [Run tests](#run-tests)
     - [Deployment](#deployment)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [� License ](#-license-)
+  - [📝 License ](#-license-)
 
 
 
-# 📖 [Math-app] <a name="about-project"></a>
+# 📖 [React-Book-store] <a name="about-project"></a>
 
 
 Book-Stores The JavaScript project is a bookstore app.
@@ -108,36 +105,6 @@ You can deploy this project using:
 - GitHub: (https://github.com/obibaadoma)
 - Twitter: (https://twitter.com/obibaadoma)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/derek-akrasi-konadu-187453151/)
-
-## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[Implement the logic]**
-- [ ] **[Refractor codes with functional hooks]**
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-## ⭐️ Show your support <a name="support"></a>
-
-> Write a message to encourage readers to support your project
-
-If you like this project...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 

@@ -20,7 +20,12 @@ const booksReducer = (state = initialState, action) => {
     case ADD_BOOKS:
       return {
         ...state,
-        books: [...state.filter((book) => book.id !== action.id)],
+        booksArray: [...state.booksArray, action],
+      };
+
+    case REMOVE_BOOKS:
+      return {
+        booksArray: [...state.booksArray.filter((book) => book.item_id !== action.item_id)],
       };
     default:
       return state;
