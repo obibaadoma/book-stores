@@ -1,57 +1,30 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+// define the action type
+const ADD_BOOKS = 'bookstore/books/ADD_BOOKS';
+const REMOVE_BOOKS = 'bookstore/books/REMOVE_BOOKS';
 
-const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/EDWoMDjjz0qKMAfUSscI/books';
+// initial state
+const initialState = { books: [] };
 
-const initialState = [];
+//  the action type to define the action creator
 
-export const fetchBooks = createAsyncThunk(
-  'fetchBooks',
-  async () => {
-    const response = await axios.get(URL);
-    const data = Object.keys(response.data).map((id) => ({
-      item_id: id,
-      ...response.data[id][0],
-    }));
-    return data;
-  },
+export const addBookAction = (newBook) => (
+  { type: ADD_BOOKS, newBook }
+);
+export const removeBookAction = (id) => (
+  { type: REMOVE_BOOKS, id }
 );
 
-export const addBook = createAsyncThunk(
-  'addBook',
-  async (payload) => {
-    await axios.post(URL, payload);
-    return payload;
-  },
-);
-
-export const removeBook = createAsyncThunk(
-  'removeBook',
-  async (id) => {
-    await axios.delete(`${URL}/${id}`);
-    return id;
-  },
-);
-
-const bookSlice = createSlice({
-  name: 'books',
-  initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(addBook.fulfilled, (state, action) => [...state, action.payload]);
-    builder.addCase(removeBook.fulfilled, (state, action) => {
-      if (action.payload) {
-        return state.filter((book) => book.item_id !== action.payload);
-      }
+// Reducer
+const booksReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_BOOKS:
+      return {
+        ...state,
+        books: [...state.filter((book) => book.id !== action.id)],
+      };
+    default:
       return state;
-    });
-    builder.addCase(fetchBooks.fulfilled, (state, action) => {
-      if (action.payload === '') {
-        return state;
-      }
-      return [...action.payload];
-    });
-  },
-});
+  }
+};
 
-export default bookSlice.reducer;
+export default booksReducer;
