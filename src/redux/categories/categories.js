@@ -1,21 +1,20 @@
-// define the action type
-const CHECKED_STATUS = 'bookstore/categories/CHECKED_STATUS';
+// Constatnts
+const CHECK_STATUS = 'bookstore/src/redux/categories/checkStatus';
 
-// Initial state
-const initialState = { categories: [] };
+const initialState = [];
 
-// Action creator
-export const checkedStatus = () => (
-  { type: CHECKED_STATUS }
-);
+export const checkStatus = (payload) => ({
+  type: CHECK_STATUS,
+  payload,
+});
 
-// Reducer
-const categoryReducer = (state = initialState, action) => {
-  if (action.type === CHECKED_STATUS) {
-    return 'under construction';
+// reducers
+
+export default function checkStatusReducer(state = initialState, action) {
+  switch (action.type) {
+    case CHECK_STATUS:
+      return 'Building in Progress';
+    default:
+      return state;
   }
-
-  return state;
-};
-
-export default categoryReducer;
+}

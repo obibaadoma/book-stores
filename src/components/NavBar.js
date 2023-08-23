@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Navigation = () => (
-  <nav>
-    <h1>BookStore</h1>
-    <ul>
-      <li><Link to="/">BOOKS</Link></li>
-      <li><Link to="/category">CATEGORY</Link></li>
+const NavBar = () => (
+  <header className="header">
+    <h1>Bookstore App</h1>
+    <ul className="nav-bar">
+      <NavLink to="/" className={({ isActive }) => (isActive ? 'kk' : undefined)}>BOOKS</NavLink>
+      <NavLink to="/Categories" className={({ isActive }) => (isActive ? 'kk' : undefined)}>CATEGORIES</NavLink>
     </ul>
-    <p>profile icon</p>
-  </nav>
+
+  </header>
 );
 
-export default Navigation;
+export default NavBar;
