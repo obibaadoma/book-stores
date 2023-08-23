@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
 const Book = () => {
-  // const { books } = this.props;
   const dispatch = useDispatch();
   const handleRemove = (id) => {
     dispatch(removeBook(id));
@@ -30,9 +29,5 @@ const Book = () => {
 Book.defaultProps = {
   books: [],
 };
-
-/* Book.propTypes = {
-  books: Number,
-}; */
 
 export default Book;
