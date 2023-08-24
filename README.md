@@ -104,7 +104,17 @@ You can deploy this project using:
 - Twitter: (https://twitter.com/obibaadoma)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/derek-akrasi-konadu-187453151/)
 
+ Future Features
+Describe 1 - 3 features you will add to the project.
 
+ [Will include styling]
+
+(back to top)
+
+🤝 Contributing
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the issues page.
 
 I would like to thank...
 
