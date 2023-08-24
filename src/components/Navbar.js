@@ -1,17 +1,25 @@
 import { Link } from 'react-router-dom';
-import '../stylesheets/Navbar.css';
+import React from 'react';
+import { IoMdPerson } from 'react-icons/io';
 
-const img = require('../images/user.png');
+const Navigation = () => (
+  <header>
+    <nav>
+      <div className="cms-links">
+        <div>
+          <h1 className="logo">BookStore CMS</h1>
+        </div>
+        <ul className="ul-books">
+          <li><Link to="/">BOOKS</Link></li>
+          <li><Link to="/category">CATEGORIES</Link></li>
+        </ul>
+      </div>
+      <button className="icon" type="button">
+        <IoMdPerson />
+      </button>
 
-const Navbar = () => (
-  <nav className="navbar">
-    <h1>Bookstore CMS</h1>
-    <ul>
-      <Link to="/">BOOKS</Link>
-      <Link to="/categories">CATEGORIES</Link>
-    </ul>
-    <img src={img} alt="user" />
-  </nav>
+    </nav>
+  </header>
 );
 
-export default Navbar;
+export default Navigation;
