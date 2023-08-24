@@ -8,10 +8,9 @@
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
-      },
+    },
     "ecmaVersion": 2018,
-    "sourceType": "module",
-    "requireConfigFile": "false"
+    "sourceType": "module"
   },
   "extends": ["airbnb", "plugin:react/recommended", "plugin:react-hooks/recommended"],
   "plugins": ["react"],
@@ -21,6 +20,12 @@
     "import/no-unresolved": "off",
     "no-shadow": "off"
   },
+  "overrides": [
+    {
+      "files": ["src/**/*Slice.js"],
+      "rules": { "no-param-reassign": ["error", { "props": false }] }
+    }
+  ],
   "ignorePatterns": [
     "dist/",
     "build/"
