@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #e8e8e8;
+  margin-bottom: 50px;
+}
+
+.form h2 {
+  width: 90%;
+  margin: 30px 0;
+}
+
+form {
+  width: 90%;
+  display: flex;
+  gap: 20px;
+}
+
+form .name {
+  padding: 10px;
+  flex: 2 1 auto;
+}
+
+form .author {
+  padding: 10px;
+  flex: 1 1 auto;
+}
+
+form input {
+  border: 1px solid #e8e8e8;
+}
+
+form input:focus {
+  outline: none;
+  border: 1px solid #b4b4b4;
+}
+
+form button {
+  padding: 10px;
+  flex: 1 1 auto;
+  background-color: #0494fc;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  opacity: 0.7;
+}

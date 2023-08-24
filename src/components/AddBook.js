@@ -1,34 +1,33 @@
-import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { createBook } from '../feature/redux/books/bookSlice';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addAction } from '../redux/books/books';
+import '../stylesheets/AddBook.css';
 
 const AddBook = () => {
-  const dispatch = useDispatch();
-  const books = useSelector((store) => store.Book.books);
-  const [title, setTitle] = useState('');
+  const [name, setName] = useState('');
   const [author, setAuthor] = useState('');
-
-  const handleSubmit = (e) => {
+  const dispatch = useDispatch();
+  const addBook = (e) => {
     e.preventDefault();
-    const booK = {
-      item_id: `item${books.length + 1}`,
-      title,
-      author,
-      category: 'Fiction',
-    };
-    dispatch(createBook(booK));
-    setAuthor('');
-    setTitle('');
+    if (name !== '' && author !== '') {
+      dispatch(addAction({
+        item_id: uuidv4(),
+        title: name,
+        author,
+        category: 'book',
+      }));
+      setName('');
+      setAuthor('');
+    }
   };
   return (
-    <div className="Add">
-      <h2>ADD NEW BOOK</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => { setTitle(e.target.value); }} placeholder="Book Title" />
-        <input type="text" onChange={(e) => { setAuthor(e.target.value); }} placeholder="Author" />
-        <button type="submit">ADD BOOK</button>
-      </form>
-    </div>
+    <form>
+      <input className="name" type="text" name="name" onChange={(e) => setName(e.target.value)} placeholder="Book title" value={name} />
+      <input className="author" type="text" name="author" onChange={(e) => setAuthor(e.target.value)} placeholder="Author" value={author} />
+      <button type="submit" onClick={(e) => addBook(e)}>Add Book</button>
+    </form>
   );
 };
+
 export default AddBook;

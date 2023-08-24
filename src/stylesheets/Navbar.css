@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.navbar > * {
+  padding: 20px;
+}
+
+.navbar h1 {
+  font-size: 30px;
+  color: #0494fc;
+  font-weight: bolder;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar ul > * {
+  text-decoration: none;
+  color: #8f8f8f;
+}
+
+.navbar ul > *:focus {
+  color: #363636;
+  font-weight: bolder;
+}
+
+.navbar img {
+  max-width: 50px;
+}

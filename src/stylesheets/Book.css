@@ -1,0 +1,83 @@
+.book {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  display: grid;
+  padding: 20px;
+  align-items: center;
+  width: 87%;
+  grid-template-columns: 1.1fr 0.8fr 1fr;
+}
+
+.bookInfo h4 {
+  color: #363636;
+}
+
+.bookInfo p {
+  color: #4386bf;
+}
+
+.bookInfo ul {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.bookInfo li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.bookInfo button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #4386bf;
+}
+
+.bookInfo li:nth-child(even) {
+  border-left: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+  padding: 0 10px;
+}
+
+.bookProgress {
+  display: flex;
+  gap: 20px;
+  border-right: 1px solid #e8e8e8;
+}
+
+.bookProgress img {
+  max-width: 70px;
+}
+
+.bookProgress p {
+  max-width: 70px;
+  color: #8f8f8f;
+}
+
+.bookChapter button {
+  margin-top: 15px;
+  padding: 5px 30px;
+  background-color: #0494fc;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.bookChapter button:hover {
+  opacity: 0.7;
+}
+
+.bookChapter {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bookChapter h4 {
+  font-size: 15px;
+  color: #8f8f8f;
+}
