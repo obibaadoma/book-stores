@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchBooks } from './components/redux/books/books';
 import BookList from './components/BookList';
-import Navigation from './components/NavBar';
+import Navigation from './components/Navbar';
 import CategoryPage from './components/Category';
 
 const App = () => {
