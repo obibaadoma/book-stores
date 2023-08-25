@@ -1,22 +1,22 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import ContentBook from './ContentBook';
-import BookForm from './BookForm';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Book from './Book';
+import { fetchBooks } from '../redux/books/booksSlice';
 
 const BookList = () => {
-  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
+  const books = useSelector((state) => state.books.data || []);
 
   return (
-    <div>
-      <ul>
-        {books.map((book) => (
-          <ContentBook
-            book={book}
-            key={book.item_id}
-          />
-        ))}
-      </ul>
-      <BookForm />
+    <div className="books-container">
+      {books.map((book) => (
+        <Book key={book.id} book={book} />
+      ))}
     </div>
   );
 };

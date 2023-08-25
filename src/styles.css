@@ -1,0 +1,61 @@
+.book {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f9f9f9;
+}
+
+.author {
+  color: #888;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.input-field {
+  padding: 8px;
+  margin: 5px 0;
+}
+
+.add-button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.navigation {
+  background-color: #3498db;
+  padding: 10px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}

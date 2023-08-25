@@ -1,0 +1,63 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.81rem;
+  padding: 1.81rem 6.25rem;
+  background-color: var(--white);
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  opacity: 0.5;
+  color: #121212;
+  text-decoration: none;
+}
+
+.active {
+  opacity: 1;
+}
+
+.Bookstore-CMS {
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+.icon-button {
+  cursor: pointer;
+  width: 2.813rem;
+  height: 2.813rem;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}
+
+.primary-color {
+  color: #0290ff;
+}

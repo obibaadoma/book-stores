@@ -1,24 +1,34 @@
-import React from 'react';
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { fetchBooks } from './components/redux/books/books';
+import Navigation from './components/Navigation';
+import Home from './components/Home';
+import Categories from './components/Categories';
 import BookList from './components/BookList';
-import Navigation from './components/NavBar';
-import CategoryPage from './components/Category';
+import BookForm from './components/BookForm';
+import { fetchBooks } from './redux/books/booksSlice';
+import './App.css';
 
-const App = () => {
+function App() {
   const dispatch = useDispatch();
-  dispatch(fetchBooks());
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
   return (
-    <div>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<BookList />} />
-        <Route path="/category" element={<CategoryPage />} />
-      </Routes>
-    </div>
+    <Router>
+      <div className="App">
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/categories" element={<Categories />} />
+        </Routes>
+        <BookList />
+        <BookForm />
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
