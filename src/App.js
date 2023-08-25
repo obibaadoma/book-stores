@@ -4,8 +4,6 @@ import { useDispatch } from 'react-redux';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Categories from './components/Categories';
-import BookList from './components/BookList';
-import BookForm from './components/BookForm';
 import { fetchBooks } from './redux/books/booksSlice';
 import './App.css';
 
@@ -24,8 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
         </Routes>
-        <BookList />
-        <BookForm />
+
       </div>
     </Router>
   );
