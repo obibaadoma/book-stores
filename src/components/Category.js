@@ -12,7 +12,7 @@ const CategoryPage = () => {
 
   return (
     <div>
-      <h1>{categories}</h1>
+      <h1 className="under-const">{categories}</h1>
       <button type="submit" className="status-button" onClick={handleSubmit}>Check Status</button>
     </div>
   );
