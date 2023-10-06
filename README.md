@@ -15,8 +15,6 @@
     - [Deployment](#deployment)
   - [📝 License ](#-license-)
 
-
-
 # 📖 [React-Book-store] <a name="about-project"></a>
 
 

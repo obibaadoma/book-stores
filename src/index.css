@@ -1,5 +1,25 @@
-body {
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&family=Roboto+Slab:wght@300;400;500;700&display=swap);
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+
+  --bubble-gum-pink: #ff5ab7;
+  --black: #1e1e1e;
+  --pinkish-grey: #c7c7c7;
+  --very-light-pink: #c4c4c4;
+  --azure: #0290ff;
+  --pale-grey: #f5f6fa;
+  --medium-blue: #307bbe;
+  --black-5: rgba(0, 0, 0, 0.05);
+  --white: #fff;
+  --white-two: #fafafa;
+  --white-three: #e8e8e8;
+}
+
+body {
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -14,14 +34,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+  padding: 5rem 3rem;
+  background-color: var(--pale-grey);
 }

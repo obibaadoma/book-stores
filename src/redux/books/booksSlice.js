@@ -1,35 +1,64 @@
-// define the action type
-const ADD_BOOKS = 'bookstore/books/ADD_BOOKS';
-const REMOVE_BOOKS = 'bookstore/books/REMOVE_BOOKS';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-// initial state
-const initialState = { books: [] };
+const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/VWV3LtrBCYDGjgHmeVp9';
 
-//  the action type to define the action creator
+export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
+  const response = await axios.get(`${baseURL}/books`);
+  const responseData = response.data;
 
-export const addBookAction = (newBook) => (
-  { type: ADD_BOOKS, newBook }
-);
-export const removeBookAction = (id) => (
-  { type: REMOVE_BOOKS, id }
-);
+  const booksArray = Object.keys(responseData).map((key) => ({
+    ...responseData[key][0],
+    item_id: key,
+  }));
 
-// Reducer
-const booksReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_BOOKS:
-      return {
-        ...state,
-        booksArray: [...state.booksArray, action],
-      };
+  return booksArray;
+});
 
-    case REMOVE_BOOKS:
-      return {
-        booksArray: [...state.booksArray.filter((book) => book.item_id !== action.item_id)],
-      };
-    default:
-      return state;
-  }
-};
+export const addBook = createAsyncThunk('books/addNewBook', async (book) => {
+  await axios.post(`${baseURL}/books`, book);
+  return book;
+});
 
-export default booksReducer;
+export const removeBook = createAsyncThunk('books/deleteBook', async (itemId) => {
+  await axios.delete(`${baseURL}/books/${itemId}`);
+  return itemId;
+});
+
+const booksSlice = createSlice({
+  name: 'books',
+  initialState: { data: [] },
+  reducers: {
+    updateProgress: (state, action) => {
+      const bookToUpdate = state.data.find((book) => book.item_id === action.payload.item_id);
+      if (bookToUpdate) {
+        bookToUpdate.progress = action.payload.progress;
+      }
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchBooks.fulfilled, (state, action) => {
+        if (Array.isArray(action.payload)) {
+          state.data = action.payload;
+        }
+      })
+      .addCase(addBook.fulfilled, (state, action) => {
+        if (Array.isArray(state.data)) {
+          state.data.push(action.payload);
+        } else {
+          state.data = [action.payload];
+        }
+      })
+
+      .addCase(removeBook.fulfilled, (state, action) => {
+        if (Array.isArray(state.data)) {
+          state.data = state.data.filter((book) => book.item_id !== action.payload);
+        }
+      });
+  },
+});
+
+export const { updateProgress } = booksSlice.actions;
+
+export default booksSlice.reducer;

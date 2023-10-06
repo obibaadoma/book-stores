@@ -1,42 +1,22 @@
-import React from 'react';
-import { v4 as uuid4 } from 'uuid';
-import ContentBook from './ContentBook';
-import BookForm from './BookForm';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Book from './Book';
+import { fetchBooks } from '../redux/books/booksSlice';
 
 const BookList = () => {
-  const books = [
-    {
-      title: 'things fall apart',
-      author: 'Chinua Achebe',
-      completed: true,
-      id: uuid4(),
-    },
-    {
-      title: 'things fall apart',
-      author: 'Chinua Achebe',
-      completed: true,
-      id: uuid4(),
-    },
-    {
-      title: 'things fall apart',
-      author: 'Chinua Achebe',
-      completed: true,
-      id: uuid4(),
-    },
-  ];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
+  const books = useSelector((state) => state.books.data || []);
 
   return (
-    <div>
-      <ul>
-        {books.map((book) => (
-          <ContentBook
-            title={book.title}
-            author={book.author}
-            key={book.id}
-          />
-        ))}
-      </ul>
-      <BookForm />
+    <div className="books-container">
+      {books.map((book) => (
+        <Book key={book.id} book={book} />
+      ))}
     </div>
   );
 };
